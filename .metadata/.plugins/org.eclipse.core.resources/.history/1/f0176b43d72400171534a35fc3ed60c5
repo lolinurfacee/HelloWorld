@@ -1,0 +1,39 @@
+import java.awt.*;
+import java.util.Hashtable;
+import javax.swing.*;
+
+@SuppressWarnings("serial")
+public class ControlPanel extends JPanel {
+	private DrawPanel drawPanel;
+	private String red;
+	private String blue;
+	private String yellow;
+	private JRadioButton rb_yellow;
+	private JRadioButton rb_blue;
+	private JRadioButton rb_red;
+
+	public ControlPanel(DrawPanel drawPanel) {
+		this.drawPanel=drawPanel;// Implement your own constructor.
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		red="Red";
+		blue="Blue";
+		yellow="Yellow";
+		rb_yellow = new JRadioButton(yellow);
+		rb_red = new JRadioButton(red);
+		rb_blue = new JRadioButton(blue);
+		
+		
+		
+			
+	}
+
+	private void setDrawPanelColor(Color color) {
+		drawPanel.setColor(color);
+		drawPanel.repaint();
+	}
+
+	private void setDrawPanelScaling(int size) {
+		drawPanel.setScaling(size);
+		drawPanel.repaint();
+	}
+}

@@ -1,0 +1,31 @@
+import java.awt.*;
+import javax.swing.*;
+
+@SuppressWarnings("serial")
+public class DrawPanel extends JPanel {
+
+	private Color myColor = Color.WHITE;
+	private double scaling = 1.0;
+	Rectangle r = this.getBounds();
+	
+	private int width=r.width;
+	private int height=r.height;
+	
+	public DrawPanel() {
+		this.setPreferredSize(new Dimension(width, height));
+		this.setBackground(Color.WHITE);
+	}
+
+	public void setColor(Color c) {
+		myColor = c;
+	}
+
+	public void setScaling(int scale) {
+		scaling = 1.0 + ((double) scale) / 100;
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.drawRect(width/2-90, height/2-90, 180, 180);
+	}
+}
